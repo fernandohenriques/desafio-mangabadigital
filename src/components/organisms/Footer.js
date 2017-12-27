@@ -20,7 +20,7 @@ const Footer = styled.div`
   text-align: center;
   z-index: 1;
   ${ media.mobile`
-      position: absolute;
+      position: relative;
   ` }
 `
 const Meta = styled.span`

@@ -1,3 +1,6 @@
+var Babili = require("babili-webpack-plugin");;
+var isProd = JSON.parse(process.env.PROD_ENV || '0');
+
 module.exports = {
   entry: "./src/app.js",
   output: {
@@ -27,5 +30,6 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: isProd ?  [new Babili()] : []
 }

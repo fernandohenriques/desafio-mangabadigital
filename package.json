@@ -15,12 +15,13 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babili-webpack-plugin": "^0.1.2",
     "file-loader": "^1.1.6",
-    "url-loader": "^0.6.2",
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "set PROD_ENV=0 && webpack",
+    "build": "set PROD_ENV=1 && webpack"
   },
   "author": "Fernando Henriques",
   "license": "ISC"
