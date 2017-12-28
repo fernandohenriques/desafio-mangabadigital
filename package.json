@@ -13,14 +13,23 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2016": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "babili-webpack-plugin": "^0.1.2",
+    "expect": "^22.0.3",
     "file-loader": "^1.1.6",
+    "jsdom": "^11.5.1",
+    "mocha": "^4.0.1",
+    "mocha-jsdom": "^1.1.0",
     "webpack": "^3.10.0"
   },
+  "babel": {
+    "presets": ["env", "react"]
+  },
   "scripts": {
-    "test": "set PROD_ENV=0 && webpack",
+    "test": "mocha --compilers js:babel-register \"test/*.js\"",
+    "dev": "set PROD_ENV=0 && webpack",
     "build": "set PROD_ENV=1 && webpack"
   },
   "author": "Fernando Henriques",

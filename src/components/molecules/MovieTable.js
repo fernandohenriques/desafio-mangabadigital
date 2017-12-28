@@ -18,16 +18,6 @@ class MovieTable extends Component {
   }
 
   render() {
-    /*const Items = (props) => {
-      if(props.data.length > 0) {
-        return (
-            {props.data.map((li,i) => {
-              return (<Item poster={li.poster} title={li.title} type={li.type} year={li.year} imdbID={li.imdbID} />);
-            })}
-        );
-      } else return (<li>Nenhum filme pesquisado até o momento...</li>);
-    }*/
-
     return (
       <Collection>
         {this.renderItems(this.props.data)}
