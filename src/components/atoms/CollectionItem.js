@@ -23,7 +23,9 @@ const ImgCircle = styled.img`
   width: 42px;
   height: 42px;
 `;
+
 const Span = styled.span`font-size: 16px;`;
+
 const IconLink = styled.a`
   position: absolute;
   top: 16px;
