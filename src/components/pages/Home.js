@@ -16,21 +16,24 @@ class Home extends Component {
     }
   }
 
-  render() {
-    const getMovies = (title) => {
-      fetch('https://jsonmock.hackerrank.com/api/movies/search/?Title='+title)
-        .then(response => response.json())
-        .then(result => {
-          console.log(result.data);
-          this.setState({ movies: result.data});
-          setTimeout(document.getElementById('modalClose').click(), 500);
-        })
-        .catch(err => {
-          console.error('Error:', err);
-        });
-    }
+  getMovies(title) {
+    fetch('https://jsonmock.hackerrank.com/api/movies/search/?Title='+title)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result.data);
+        this.setState({ movies: result.data});
+        setTimeout(document.getElementById('modalClose').click(), 500);
+      })
+      .catch(err => {
+        console.error('Error:', err);
+      });
+  }
 
-    const execKeyPress = (e) => { if(e.key === 'Enter') getMovies(e.target.value); }
+  execKeyPress(e) { 
+    if(e.key === 'Enter') this.getMovies(e.target.value);
+  }
+
+  render() {
 
     const Wrapper = styled.div`
       position: relative;
@@ -45,12 +48,13 @@ class Home extends Component {
 
     return (
       <Wrapper>
-        <Search SearchInputKeyPress={execKeyPress} />
+        <Search SearchInputKeyPress={this.execKeyPress} />
         <MainSection>
           <MovieTable data={this.state.movies} />
         </MainSection>
       </Wrapper>
     );
+
   }
 }
 
