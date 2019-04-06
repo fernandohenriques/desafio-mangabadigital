@@ -34,23 +34,24 @@ class Home extends Component {
   }
 
   render() {
+    const { movies } = this.state;
 
     const Wrapper = styled.div`
       position: relative;
-    `
+    `;
 
     const MainSection = styled.section`
       overflow-y: scroll;
       height: 400px;
       position: relative;
       ${ this.media.mobile`height: 600px;` }
-    `
+    `;
 
     return (
       <Wrapper>
-        <Search SearchInputKeyPress={this.execKeyPress} />
+        <Search SearchInputKeyPress={e => this.execKeyPress(e)} />
         <MainSection>
-          <MovieTable data={this.state.movies} />
+          <MovieTable data={movies} />
         </MainSection>
       </Wrapper>
     );

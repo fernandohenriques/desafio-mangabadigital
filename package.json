@@ -4,6 +4,11 @@
   "description": "Desafio de ReactJS feito para concorrer a vaga de dev na EficazPay",
   "private": true,
   "main": "webpack.config.js",
+  "scripts": {
+    "test": "mocha --require babel-core/register \"test/index.js\"",
+    "dev": "set PROD_ENV=0 && webpack",
+    "build": "set PROD_ENV=1 && webpack"
+  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -42,11 +47,6 @@
         }
       ]
     ]
-  },
-  "scripts": {
-    "test": "mocha --require babel-core/register \"test/index.js\"",
-    "dev": "set PROD_ENV=0 && webpack",
-    "build": "set PROD_ENV=1 && webpack"
   },
   "author": "Fernando Henriques",
   "license": "ISC"

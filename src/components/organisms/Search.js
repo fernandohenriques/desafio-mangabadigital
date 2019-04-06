@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import ButtonSearch from '../molecules/ButtonSearch';
 import ModalSearch from '../molecules/ModalSearch';
+import ButtonSearch from '../molecules/ButtonSearch';
 
 class Search extends Component {
   constructor(props){

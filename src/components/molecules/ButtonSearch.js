@@ -15,9 +15,9 @@ const IconSearch = styled.i.attrs({className:'material-icons icon-material-searc
 
 export default (props) => {
   return (
-          <div>
-            <ButtonCircle scale={props.scale} />
-            <IconSearch opacity={props.active}>search</IconSearch>
-          </div>
-        );
+    <div>
+      <ButtonCircle scale={props.scale} />
+      <IconSearch opacity={props.active}>search</IconSearch>
+    </div>
+  );
 }
