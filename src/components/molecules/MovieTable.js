@@ -3,10 +3,6 @@ import Item from '../atoms/CollectionItem';
 import Collection from '../atoms/Collection';
 
 class MovieTable extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderItems(items) {
     if(items.length > 0)
       return items.map((li,i) =>

@@ -1,13 +1,13 @@
 {
-  "name": "desafio-eficazpay",
+  "name": "desafio-mangabadigital",
   "version": "1.0.0",
-  "description": "Desafio de ReactJS feito para concorrer a vaga de dev na EficazPay",
+  "description": "Desafio de ReactJS feito para concorrer a vaga de dev na EficazPay (Mangaba Digital)",
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
-    "test": "mocha --require babel-core/register \"test/index.js\"",
     "dev": "set PROD_ENV=0 && webpack",
-    "build": "set PROD_ENV=1 && webpack"
+    "build": "set PROD_ENV=1 && webpack",
+    "test": "mocha --require babel-core/register \"test/index.js\""
   },
   "dependencies": {
     "react": "^16.2.0",

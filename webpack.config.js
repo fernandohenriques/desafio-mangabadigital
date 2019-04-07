@@ -1,5 +1,5 @@
-var Babili = require("babili-webpack-plugin");;
-var isProd = JSON.parse(process.env.PROD_ENV || '0');
+const Babili = require("babili-webpack-plugin");
+const isProd = JSON.parse(process.env.PROD_ENV || '0');
 
 module.exports = {
   entry: "./src/app.js",
@@ -7,14 +7,18 @@ module.exports = {
     filename: "public/js/app.js"
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env']
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {
+              presets: ['react', 'env']
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -32,4 +36,4 @@ module.exports = {
     ]
   },
   plugins: isProd ?  [new Babili()] : []
-}
+};
