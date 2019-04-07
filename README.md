@@ -10,7 +10,6 @@ git clone https://github.com/fernandohenriques/desafio-mangabadigital.git
 cd desafio-mangabadigital/
 npm install
 npm run dev
-Use your preferred server to point for desafio-mangabadigital/public/
 ```
 
 

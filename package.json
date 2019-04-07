@@ -5,7 +5,7 @@
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "set PROD_ENV=0 && webpack",
+    "dev": "set PROD_ENV=0 && webpack && cd public && ws",
     "build": "set PROD_ENV=1 && webpack",
     "test": "mocha --require babel-core/register \"test/index.js\""
   },
@@ -26,6 +26,7 @@
     "file-loader": "^1.1.6",
     "jsdom": "^11.5.1",
     "jsdom-global": "^3.0.2",
+    "local-web-server": "^2.6.1",
     "mocha": "^4.0.1",
     "react-test-renderer": "^16.2.0",
     "webpack": "^3.10.0"
@@ -36,16 +37,7 @@
       "react"
     ],
     "plugins": [
-      [
-        "inline-import-data-uri",
-        {
-          "extensions": [
-            ".png",
-            ".jpg",
-            ".gif"
-          ]
-        }
-      ]
+      ["inline-import-data-uri", { "extensions": [".png", ".jpg", ".gif"] }]
     ]
   },
   "author": "Fernando Henriques",
